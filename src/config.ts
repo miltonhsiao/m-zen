@@ -18,14 +18,14 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   site: "https://example.com/", // your site url
-  title: "Your's blog",
-  slogan: "Exploring the World with Code",
-  description: "write a description here",
+  title: "M's Zen 米的日常",
+  slogan: "Learing, Creating, Be Awared. 時時學習、創作並覺察.",
+  description: "一個紀錄並挖掘自我學習與成長的地方",
   social: {
-    github: "https://github.com/larry-xue/astro-zen-blog", // leave empty if you don't want to show the github
-    linkedin: "https://www.linkedin.com/in/someone/", // leave empty if you don't want to show the linkedin
-    email: "example@gmail.com", // leave empty if you don't want to show the email
-    rss: true, // set this to false if you don't want to provide an rss feed
+    github: "https://https://github.com/miltonhsiao/m-zen", // leave empty if you don't want to show the github
+    linkedin: "", // leave empty if you don't want to show the linkedin
+    email: "MZen1779@gmail.com", // leave empty if you don't want to show the email
+    rss: false, // set this to false if you don't want to provide an rss feed
   },
   homepage: {
     maxPosts: 5,
