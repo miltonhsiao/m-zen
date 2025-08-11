@@ -1,180 +1,48 @@
-# Astro Zen Blog
+# M-Zen | 米大叔的日常
 
-<img width="1523" alt="ZEN-HOME" src="https://github.com/user-attachments/assets/3d8c3250-ec82-4cdf-9e84-ce4fd069b040" />
+<img width="1523" alt="unsplash-note" src="https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
 
-A minimal, responsive, and SEO-friendly blog template built with Astro. Features clean design, dark mode support, and markdown-based content management.
+追求數位簡約、漸進式學習與觀點創作的個人空間。
 
-live demo: [Yujian's blog](https://blog.larryxue.dev/)
+## About | 簡介
 
-If you find this project helpful, please consider giving it a star ⭐️.
+M-Zen 是一個建立於 Astro 架構上的靜態網站，用於整理與分享個人觀點、學習筆記與創作記錄。它融入個人喜好風格（如數位禪 Minimal Zen），讓思想轉化為內容，透過簡約設計與模組化管理，構築可持續運作的創作空間。
 
-## Awesome Blogs built on top of this template
+## Structure | 組成
 
-> For who want to build their own blog, I strongly recommend you to fork this repo and add your own features. This repo is a simple and clean blog template.
-
-- [Yujian's blog](https://blog.larryxue.dev/)
-- [Okaryo's blog](https://blog.okaryo.studio/20241228-migrate-blog-from-gatsby-to-astro/)
-
-
-[中文Readme](./docs/README_CN.md)
-
-## Table of Contents
-
-- [Features](#features)
-- [Installation](#installation)
-- [Configuration](#configuration)
-  - [Site Settings](#site-settings)
-  - [HomePage Posts Filter](#homepage-posts-filter)
-  - [Theme](#theme)
-- [Writing Content](#writing-content)
-- [Creating New Posts](#creating-new-posts)
-- [Build and Deploy](#build-and-deploy)
-- [Project Structure](#project-structure)
-- [Features Roadmap](#features-roadmap)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Features
-
-- 📝 Markdown/MDX for content authoring
-- 🎨 Clean and minimalist design
-- 🏷️ Tag-based organization
-- 🌓 Dark mode support
-- 🔍 SEO optimized
-- 📱 Fully responsive
-- 🔗 Social media integration
-- 📰 RSS feed & sitemap support
-- ⚡ Fast performance
-- 🛠️ Google analysis interation
-- 🔍 Local search functionality
-
-![lighthouse score](https://github.com/larry-xue/larry-xue/blob/master/assets/lighthouse.gif)
-
-## Installation
-
-1. Use the Astro CLI to create a new project:
-
-   ```bash
-   npm create astro@latest -- --template larry-xue/astro-zen-blog
-   cd ./to_your_project
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-
-   ```bash
-   npm run dev
-   ```
-
-## Configuration
-
-### Site Settings
-
-1. Open `src/config.ts` and customize your site settings:
-
-```typescript
-export const siteConfig: SiteConfig = {
-  site: "https://example.com/", // your site URL
-  title: "Your Blog",
-  slogan: "Exploring the World with Code",
-  description: "Write a description here",
-  social: {
-    github: "https://github.com/username",
-    linkedin: "https://www.linkedin.com/in/username",
-    email: "your@email.com",
-    rss: true,
-  },
-  homepage: {
-    maxPosts: 5, // Maximum number of posts to display
-    tags: [], // Only display posts with these tags
-    excludeTags: [], // Exclude posts with these tags
-  },
-  googleAnalytics: "G-XXXXXXXXXX", // Google Analytics tracking ID
-  search: true, // Enable local search
-};
-```
-
-### HomePage Posts Filter
-
-If you want more customization in homepage posts. You can customize the posts displayed by writing a custom filter with updating the `filterPublishedPosts` function in `src/utils/posts.ts`.:
-
-### Theme
-
-Update primary and secondary colors in `tailwind.config.js`:
-
-## Writing Content
-
-1. Create new blog posts in the `src/content/blog/` directory
-2. Use the following frontmatter template:
-
-```markdown
----
-title: "Your Post Title"
-description: "A brief description of your post"
-date: YYYY-MM-DD
-tags: ["tag1", "tag2"]
-image: "cover image URL"
----
-
-Your content here...
-```
-
-Of course, you can customize the metadata as needed in `src/content/config.ts`.
-
-## Creating New Posts
-
-To create a new blog post, this template provide an npm scripts to help you create a new post:
-
-```bash
-# this will create a new markdown file in src/content/blog/filename.md
-npm run new-post \<filename\>
-```
-
-You can customize the template of the new post in `scripts/new-post.js`.
-
-## Build and Deploy
-
-1. Build your site:
-
-   ```bash
-   npm run build
-   ```
-
-2. Deploy options:
-
-   - **Cloudflare Pages**: [Deploy to Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/#deploy-with-cloudflare-pages)
-
-## Project Structure
-
-```
-astro-zen-blog/
+├── public/                 # 靜態資源
 ├── src/
+│   ├── components/         # 共用元件
 │   ├── content/
-│   │   └── blog/    # Blog posts
-│   ├── layouts/     # Page layouts
-│   ├── components/  # UI components
-│   └── config.ts    # Site configuration
-├── public/          # Static assets
-└── astro.config.mjs # Astro configuration
-```
+│   │   └── blog/           # Markdown 文章內容
+│   ├── layouts/            # 版型模組
+│   ├── pages/              # 路由頁面
+│   ├── styles/             # 全站樣式
+│   └── config/             # 網站基本設定
+├── astro.config.mjs        # Astro 設定
+├── package.json            # 套件與指令
+└── README.md               # 專案簡介
 
-## Features Roadmap
+## Tech Stack | 技術
 
-This project is almost complete. If you have any suggestions or feedback, please feel free to open an issue or pull request.
+- Astro — 快速、輕量的靜態網站生成器
+- Tailwind CSS — 公用樣式系統
+- Markdown — 內容撰寫格式
+- GitHub Pages — 靜態網站部署
+- rehype-pretty-code — 程式碼區塊美化
 
-## Contributing
+## What is 'M-Zen' | 理念
 
-Contributions are welcome! Feel free to:
+- M：Modular（模組化思考） / Mindful（有意識創作） / Milton（創作者）
+- Zen：減法生活，重心回歸平靜與反思
 
-1. Fork the repository
-2. Create your feature branch
-3. Submit a pull request
+這裡是一項長期個人體驗，用來探索中年大叔在轉身後「在AI的助力下，用自學的跨界技術加以組合、建立自我表達空間」。
+>「在學習中創作，在創作中覺察。」
 
-## License
+## Contact & Update | 聯絡及更新
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+- 網站預覽：https://m-zen.pages.dev/
+
+- 訂閱更新：（建構中）
+
+- 目前仍在持續開發中，歡迎 issue / fork / 建議！

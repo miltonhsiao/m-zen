@@ -21,27 +21,39 @@ const postsByYear = sortedPosts.reduce((acc, post) => {
 const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 ---
 
-<BaseLayout title="Archive">
-  <h1 class="text-4xl font-bold mb-8 text-gray-900 dark:text-white">Archive</h1>
-  
-  {years.map(year => (
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">{year}</h2>
-      <ul class="space-y-4">
-        {postsByYear[year].map(post => (
-          <li class="flex items-baseline gap-4">
-            <span class="text-sm whitespace-nowrap">
-              <PostDate date={post.data.date} />
-            </span>
-            <a 
-              href={`/blog/${post.slug}`}
-              class="text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400"
-            >
-              {post.data.title}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </section>
-  ))}
+<BaseLayout title="M-Zen | Archive">
+  <h1 class="text-4xl font-bold mb-8 text-gray-900 dark:text-white">Archive | 見證轉變</h1>
+  <p class="text-xl mb-8 text-gray-600 dark:text-gray-300">一步步前進，留下重新設計的生活足跡，見證自我的轉變。</p>
+  <div class="relative">
+    <!-- 垂直線 -->
+    <div class="absolute left-2 top-0 h-full border-l-2 border-gray-300 dark:border-gray-600"></div>
+    
+    {years.map(year => (
+      <section class="mb-12 pl-12 relative">
+        <!-- 年份圓點 -->
+        <div class="absolute left-[0.075rem] bg-primary-300 rounded-full w-4 h-4 mt-1 border-2 border-white dark:border-gray-900"></div>
+        
+        <!-- 年份 -->
+        <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+          {year}
+        </h2>
+
+        <ul class="space-y-4">
+          {postsByYear[year].map(post => (
+            <li class="flex items-baseline gap-4">
+              <span class="text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
+                <PostDate date={post.data.date} />
+              </span>
+              <a 
+                href={`/blog/${post.slug}`}
+                class="text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400"
+              >
+                {post.data.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
 </BaseLayout>

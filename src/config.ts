@@ -17,12 +17,12 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  site: "https://example.com/", // your site url
-  title: "M's Zen 米的日常",
-  slogan: "Learing, Creating, Be Awared. 時時學習、創作並覺察.",
-  description: "一個紀錄並挖掘自我學習與成長的地方",
+  site: "https://m-zen.pages.dev/", // your site url
+  title: "M-Zen | 米大叔的日常",
+  slogan: "Learing, Creating, Be Awared.",
+  description: "一個中年大叔轉身後與AI一同挖掘自我，學習重新設計生活。",
   social: {
-    github: "https://https://github.com/miltonhsiao/m-zen", // leave empty if you don't want to show the github
+    github: "https://github.com/miltonhsiao/m-zen", // leave empty if you don't want to show the github
     linkedin: "", // leave empty if you don't want to show the linkedin
     email: "MZen1779@gmail.com", // leave empty if you don't want to show the email
     rss: false, // set this to false if you don't want to provide an rss feed

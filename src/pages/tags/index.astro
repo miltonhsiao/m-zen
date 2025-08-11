@@ -9,21 +9,37 @@ const tagCounts = tags.map(tag => ({
   name: tag,
   count: getPostsByTag(posts, tag).length
 })).sort((a, b) => b.count - a.count);
+
+const maxCount = Math.max(...tagCounts.map(t => t.count));
+const minCount = Math.min(...tagCounts.map(t => t.count));
+
+function getFontSize(count) {
+  const minFont = 14;
+  const maxFont = 30;
+  if (maxCount === minCount) return `${minFont}px`;
+  const size = minFont + ((count - minCount) / (maxCount - minCount)) * (maxFont - minFont);
+  return `${size}px`;
+}
+
+function getColorLightness(count) {
+  // 輕微調整色彩飽和度，值介於40%~90%
+  if (maxCount === minCount) return 70;
+  return 90 - ((count - minCount) / (maxCount - minCount)) * 50;
+}
 ---
 
-<BaseLayout title="Tags">
-  <h1 class="text-4xl font-bold mb-8 text-gray-900 dark:text-white">Tags</h1>
-  
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+<BaseLayout title="M-Zen | Tags">
+  <h1 class="text-4xl font-bold mb-8 text-gray-900 dark:text-white">Tags | 凝聚焦點</h1>
+  <p class="text-xl mb-8 text-gray-600 dark:text-gray-300">從漸漸累積的想法去挖掘、去剖析，找到人生意義的指南針。</p>
+  <div class="flex flex-wrap gap-4">
     {tagCounts.map(({ name, count }) => (
       <a
         href={`/tags/${name}`}
-        class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+        class="rounded-lg transition-colors"
+        style={`font-size: ${getFontSize(count)}; color: hsl(240, 100%, ${getColorLightness(count)}%)`}
+        title={`${count} posts`}
       >
-        <div class="flex items-center justify-between">
-          <span class="text-lg font-medium text-gray-900 dark:text-white">#{name}</span>
-          <span class="text-sm text-gray-600 dark:text-gray-400">{count} posts</span>
-        </div>
+        #{name}
       </a>
     ))}
   </div>

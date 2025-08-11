@@ -2,7 +2,7 @@
 title: "Hello World"
 description: "Welcome to my blog! This is my first post."
 date: 2024-03-21
-tags: ["welcome", "first-post"]
+tags: ["welcome", "first-post","technical-writing", "best-practices"]
 ---
 
 Hello everyone! This is my first blog post. I'm excited to share my thoughts and experiences with you.
