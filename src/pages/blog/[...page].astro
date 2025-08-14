@@ -16,9 +16,9 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<BaseLayout title="M-Zen | Blog">
+<BaseLayout title="M-Zen / Blog">
   <h1 class="text-4xl font-bold mb-8  text-gray-900 dark:text-white">Blog | 累積想法</h1>
-  <p class="text-xl mb-8 text-gray-600 dark:text-gray-300">不要讓「AI比你更懂你」，持續累積自身的想法，漸漸浮現更清晰的自我。</p>
+  <p class="text-xl mb-8 text-gray-600 dark:text-gray-300">現實是「AI比你更懂你」，化被動為主動，不再被AI收集分析推薦，自主匯集剖析推進，慢慢拼湊更自由自在的生活。</p>
   <section>
     {page.data.map((post) => <BlogPreview post={post} />)}
   </section>

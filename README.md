@@ -10,18 +10,18 @@ M-Zen 是一個建立於 Astro 架構上的靜態網站，用於整理與分享�
 
 ## Structure | 組成
 
-├── public/                 # 靜態資源
-├── src/
-│   ├── components/         # 共用元件
-│   ├── content/
-│   │   └── blog/           # Markdown 文章內容
-│   ├── layouts/            # 版型模組
-│   ├── pages/              # 路由頁面
-│   ├── styles/             # 全站樣式
-│   └── config/             # 網站基本設定
-├── astro.config.mjs        # Astro 設定
-├── package.json            # 套件與指令
-└── README.md               # 專案簡介
+├── public/                 # 靜態資源  
+├── src/  
+│   ├── components/         # 共用元件  
+│   ├── content/  
+│   │   └── blog/           # Markdown 文章內容  
+│   ├── layouts/            # 版型模組  
+│   ├── pages/              # 路由頁面  
+│   ├── styles/             # 全站樣式  
+│   └── config/             # 網站基本設定  
+├── astro.config.mjs        # Astro 設定  
+├── package.json            # 套件與指令  
+└── README.md               # 專案簡介  
 
 ## Tech Stack | 技術
 
@@ -33,8 +33,8 @@ M-Zen 是一個建立於 Astro 架構上的靜態網站，用於整理與分享�
 
 ## What is 'M-Zen' | 理念
 
-- M：Modular（模組化思考） / Mindful（有意識創作） / Milton（創作者）
-- Zen：減法生活，重心回歸平靜與反思
+- M：有意識、專注地(Mindful)挖掘深層的動機(Motivation)，持續(Maintain)自律地累積日常的靈感(Muse)去學習、探索與創作組合(Mosaic)，在這紛擾分裂的數位生活裡為他人帶來一些轉變(Momentum)。
+- Zen：減法生活(減少限制;增加自由)，偏向「(數位)極簡主義(Minimal)」，重心回歸平靜與反思。
 
 這裡是一項長期個人體驗，用來探索中年大叔在轉身後「在AI的助力下，用自學的跨界技術加以組合、建立自我表達空間」。
 >「在學習中創作，在創作中覺察。」

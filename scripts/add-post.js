@@ -10,20 +10,24 @@ if (!filename) {
 }
 
 const date = new Date().toISOString().split('T')[0];
-const postPath = path.join('src', 'content', 'blog', `${filename}.md`);
+const postPath = path.join('src', 'content', 'blog', `${date}-${filename}.md`);
 
 const content = `---
-title: Your Title Here
-description: Add your description here
+title: "${filename}"
+description: ""
 date: ${date}
 tags: []
-draft: true
+unsplashId: ""
+image: ""
+photographerName: ""
+photographerLink: ""
+draft: false
 ---
 
 Write your content here...
-`;
+`; // 若 draft 為 true 不會被發佈
 
 fs.mkdirSync(path.dirname(postPath), { recursive: true });
 fs.writeFileSync(postPath, content);
 console.log(`Created new post at: ${postPath}`);
-console.log("\x1b[38;2;100;255;100m✓\x1b[38;2;150;255;150m Post created successfully!\x1b[0m");
+console.log("\x1b[38;2;100;255;100m✓ Post created successfully!\x1b[0m");
